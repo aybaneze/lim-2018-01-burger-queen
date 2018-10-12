@@ -1,0 +1,17 @@
+[{
+    "item": "Cafe americano",
+    "precio": "5"
+    
+},
+{
+    "item": "Cafe con leche",
+    "precio": "7"
+},
+ {
+    "item": "Sandwich de jamón y queso",
+    "precio": "10"
+ }, 
+ {
+    "item": "Jugo natural",
+    "precio": "7"
+ }]
