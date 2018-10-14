@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Desayuno from './ComponentDesayuno/desayuno'
 // import * as firebase from 'firebase';
 // import {db_config} from './config/config.js';
 
@@ -8,47 +9,44 @@ class App extends Component {
 constructor(props){
   super(props);
     this.state = {
-      name: []
+      name: '',
+      status: true
     }
-  
 }
-
-componentDidMount(){
-  const {name} = this.state;
-  fetch('../functions/desayuno.json')
-    .then(response=>response.json())
-      .then(data=>{
-        name.push({
-          name: data
-
-        })
-        console.log(data)
-      })
-}
-
-
-
 
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    if(this.state.status){
+       return (
+       <div>
+        <form onSubmit={this.handleSubmit.bind(this)}>         
+          <input type="text" onChange={this.handleName.bind(this)}/>
+          <button type="submit" >Ingresar</button>
+        </form>
       </div>
-    );
+    )
+    } else{
+      return(
+       
+      <div >
+          <Desayuno/>
+          {this.state.name}   
+      </div>
+      )      
+    }
   }
+
+handleSubmit(event){
+  event.preventDefault(event)
+    if(this.state.status){
+      this.setState({status:false})
+    }  
 }
 
+handleName(event){
+  this.setState({name: event.target.value})
+}
+
+
+}
 export default App;
+
