@@ -19,7 +19,8 @@ class Menu extends Component{
                   console.log(data[value])
                 menu.push({
                 item: data[value].item,
-                precio: data[value].precio
+                precio: data[value].precio,
+                tamaño: data[value].tamaño
               })  
               } 
               this.setState({menu})  
@@ -32,6 +33,10 @@ class Menu extends Component{
         this.setState({status:true})
     }
 
+    handleSalir(){
+        this.setState({status:false})
+    }
+
     render(){
         if(this.state.status){
             return(
@@ -41,10 +46,12 @@ class Menu extends Component{
                             <CartaMenu
                                 key={key}
                                 item= {data.item}
-                                precio={data.precio}    
+                                precio={data.precio}   
+                                tamaño={data.tamaño} 
                             />
                         )
                     })}
+                    <button onClick={this.handleSalir.bind(this)}>Salir</button>
                   
                 </div>
             )

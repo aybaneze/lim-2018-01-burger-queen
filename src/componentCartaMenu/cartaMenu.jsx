@@ -6,6 +6,7 @@ class CartaMenu extends Component{
         super(props);
         this.item= props.item;
         this.precio= props.precio;
+        this.tamaño= props.tamaño;
     }
 
     // handleMenu(){
@@ -17,6 +18,7 @@ class CartaMenu extends Component{
                 <div>
                     {this.item}
                     {this.precio}
+                    {this.tamaño}
                     <button>Seleccionar</button>
                 </div>
             )
