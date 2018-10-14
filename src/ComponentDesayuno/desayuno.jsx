@@ -7,8 +7,7 @@ constructor(props){
     this.state={
         desayuno: [],
         status: false
-    }
-    
+    }    
 }
 
 componentDidMount(){
@@ -30,20 +29,25 @@ componentDidMount(){
 handleDesayuno(){
     this.setState({status:true})
 }
+handleSalir(){
+    this.setState({status:false})
+}
 
     render(){
         console.log(this.state.desayuno)
         if(this.state.status){
              return(
                  <div>
-                    {this.state.desayuno.map(data=>{
+                    {this.state.desayuno.map((data,key)=>{
                         return(
                             <CartaDesayuno
+                            key={key}
                             item= {data.item}
                             precio = {data.precio}
                             />
                         )
-                    })}                    
+                    })} 
+                    <button onClick={this.handleSalir.bind(this)}>Salir</button>                  
                  </div>
                     )  
         }else{

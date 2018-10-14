@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Desayuno from './ComponentDesayuno/desayuno'
+import Menu from './componentMenu/menu'
 // import * as firebase from 'firebase';
 // import {db_config} from './config/config.js';
 
@@ -25,10 +26,10 @@ constructor(props){
       </div>
     )
     } else{
-      return(
-       
-      <div >
+      return(     
+      <div>
           <Desayuno/>
+          <Menu/>
           {this.state.name}   
       </div>
       )      

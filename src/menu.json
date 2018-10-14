@@ -1,42 +1,38 @@
 [{
     "item": "Hamburguesa Simple",
-    "precio": "10",
-    "extra": {
-        "extras1":"Papas Fritas",
-        "extras2":"Onion Rings",
-        "precio": "5"
-    } 
+    "precio": "10"     
+},
+{
+    "item":"Papas Fritas",
+    "precio": "5"
+},
+{
+    "extras2":"Onion Rings",
+    "precio": "5"
 },
 {
     "item": "Hamburguesa Simple",
-    "precio": "15",
-    "extra": {
-        "extras1":"Papas Fritas",
-        "extras2":"Onion Rings",
-        "precio": "5"
-    },
-    "BebidasPequeña": {
-        "bebida1":{
-            "contenido": "Agua",
-            "tamaño":"500ml"            
-        },
-        "bebida2":{
-            "contenido": "Gaseosa",
-            "tamaño":"500ml"   
-        }
-    },
-    "BebidasGrande": {
-        "bebida1":{
-            "contenido": "Agua",
-            "tamaño":"750ml"            
-        },
-        "bebida2":{
-            "contenido": "Gaseosa",
-            "tamaño":"750ml"   
-        }
-    }
-}
-
+    "precio": "15"
+},
+{
+    "item": "Agua",
+    "precio": "5",
+    "tamaño":"500ml"            
+},
+{
+    "item": "Gaseosa",
+    "precio":"7",
+    "tamaño":"500ml"  
+},
+{
+    "item": "Agua",
+    "precio":"4",
+    "tamaño":"750ml"
     
-
- ]
+},
+{
+    "item": "Gaseosa",
+    "precio": "7",
+    "tamaño":"750ml" 
+}
+]

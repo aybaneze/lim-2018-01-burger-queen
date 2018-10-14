@@ -13,6 +13,7 @@ class CartaDesayuno extends Component{
             <div>
                 {this.item}
                 {this.precio}
+                <button>Seleccionar</button>
             </div>
         )
     }
