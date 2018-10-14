@@ -1,36 +1,44 @@
 [{
+    "id": "1",
     "item": "Hamburguesa Simple",
     "precio": "10"     
 },
 {
+    "id": "2",
     "item":"Papas Fritas",
     "precio": "5"
 },
 {
+    "id": "3",
     "item":"Onion Rings",
     "precio": "5"
 },
 {
+    "id": "4",
     "item": "Hamburguesa Simple",
     "precio": "15"
 },
 {
+    "id": "5",
     "item": "Agua",
     "precio": "5",
     "tamaño":"500ml"            
 },
 {
+    "id": "6",
     "item": "Gaseosa",
     "precio":"7",
     "tamaño":"500ml"  
 },
 {
+    "id": "7",
     "item": "Agua",
     "precio":"4",
     "tamaño":"750ml"
     
 },
 {
+    "id": "8",
     "item": "Gaseosa",
     "precio": "7",
     "tamaño":"750ml" 

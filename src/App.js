@@ -5,7 +5,6 @@ import Desayuno from './ComponentDesayuno/desayuno'
 import Menu from './componentMenu/menu'
 // import * as firebase from 'firebase';
 // import {db_config} from './config/config.js';
-
 class App extends Component {
 constructor(props){
   super(props);
@@ -15,14 +14,14 @@ constructor(props){
     }
 }
 
-  render() {
+  render(){
     if(this.state.status){
        return (
        <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>         
-          <input type="text" onChange={this.handleName.bind(this)}/>
-          <button type="submit" >Ingresar</button>
-        </form>
+         <form onSubmit={this.handleSubmit.bind(this)}>         
+           <input type="text" onChange={this.handleName.bind(this)}/>
+           <button type="submit" >Ingresar</button>
+         </form>
       </div>
     )
     } else{
@@ -30,7 +29,8 @@ constructor(props){
       <div>
           <Desayuno/>
           <Menu/>
-          {this.state.name}   
+          {this.state.name} 
+          <h1>total</h1>
       </div>
       )      
     }

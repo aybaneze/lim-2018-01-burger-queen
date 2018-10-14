@@ -16,8 +16,8 @@ class Menu extends Component{
           .then(response=>response.json())
             .then(data=>{
               for(let value in data){
-                  console.log(data[value])
                 menu.push({
+                id: data[value].id,
                 item: data[value].item,
                 precio: data[value].precio,
                 tamaño: data[value].tamaño
@@ -26,7 +26,6 @@ class Menu extends Component{
               this.setState({menu})  
             })
             console.log(this.state.menu)
-
     }
 
     handleMenu(){
@@ -34,7 +33,7 @@ class Menu extends Component{
     }
 
     handleSalir(){
-        this.setState({status:false})
+      this.setState({status:false})
     }
 
     render(){
@@ -45,6 +44,7 @@ class Menu extends Component{
                         return(
                             <CartaMenu
                                 key={key}
+                                id={data.id}
                                 item= {data.item}
                                 precio={data.precio}   
                                 tamaño={data.tamaño} 
@@ -52,7 +52,6 @@ class Menu extends Component{
                         )
                     })}
                     <button onClick={this.handleSalir.bind(this)}>Salir</button>
-                  
                 </div>
             )
         }else{
@@ -60,7 +59,7 @@ class Menu extends Component{
                 <div>
                     <button onClick={this.handleMenu.bind(this)}>Menu</button>
                 </div>
-            )
+                  )
         }
     }
 

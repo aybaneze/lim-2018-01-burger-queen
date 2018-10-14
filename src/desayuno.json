@@ -1,18 +1,22 @@
 [
 {
+    "id":"1",
     "item": "Cafe americano",
     "precio": "5"
     
 },
 {
+    "id":"2",
     "item": "Cafe con leche",
     "precio": "7"
 },
  {
+    "id":"3",
     "item": "Sandwich de jamón y queso",
     "precio": "10"
  }, 
  {
+    "id":"4",
     "item": "Jugo natural",
     "precio": "7"
  }

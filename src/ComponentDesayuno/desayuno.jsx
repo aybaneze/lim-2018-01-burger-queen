@@ -17,13 +17,13 @@ componentDidMount(){
       .then(data=>{
         for(let value in data){
           desayuno.push({
+          id: data[value].id,
           item: data[value].item,
           precio: data[value].precio
         })  
         } 
         this.setState({desayuno})  
       })
-      console.log(this.state.desayuno)
 }
 
 handleDesayuno(){
