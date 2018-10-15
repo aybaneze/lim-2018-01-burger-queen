@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 import CartaMenu from '../componentCartaMenu/cartaMenu'
+import TotalMenu from '../list/total';
 
 class Menu extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
             menu:[],
             status: false
         }
+
+        this.total= props.total;
     }
 
     componentDidMount(){
@@ -51,6 +54,8 @@ class Menu extends Component{
                             />
                         )
                     })}
+                    <h1>Total</h1>
+                    {/* <TotalMenu/> */}
                     <button onClick={this.handleSalir.bind(this)}>Salir</button>
                 </div>
             )

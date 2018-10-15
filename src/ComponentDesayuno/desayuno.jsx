@@ -34,7 +34,6 @@ handleSalir(){
 }
 
     render(){
-        console.log(this.state.desayuno)
         if(this.state.status){
              return(
                  <div>
