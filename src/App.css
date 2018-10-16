@@ -1,20 +1,22 @@
 html {
-  padding-top: 10px;
   height: 100vh;
   margin: 0;
-  
+  padding: 0;
 }
-body{
+
+body {
   background-image: url('img-fond.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   margin: 0;
-  padding-top:7%; 
-
+  padding-top: 5%; 
+}
+i{
+  color: #ffca1d;
 }
 
-h1{
+h1 {
   font-family: 'Fredoka One', cursive;
   text-align: center;
   margin-bottom: 20px;
@@ -23,32 +25,39 @@ h1{
   color: rgb(255, 209, 57);
 }
 
-Button{
-  margin-left: 44% ;
+Button {
+  margin-left: 44%;
   margin-top: 10px;
   float: center;
   width: 150px;
 }
-h3{
-  color:#fff;
+
+h3 {
+  color: #fff;
 }
 
-.inicio{
-  background: #c31432;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-height: 500px;
-margin: 0;
-color: white;
+.inicio {
+  background: #c31432;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #240b36, #c31432);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #240b36, #c31432);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 120vh;
+  margin: 0;
+  color: white;
 }
 
-
+p {
+  color: black;
+}
 
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

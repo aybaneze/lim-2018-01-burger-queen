@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Grid, Row, Col,Form, FormControl} from 'react-bootstrap'
 
 class CartaDesayuno extends Component{
     constructor(props){
@@ -12,7 +13,8 @@ class CartaDesayuno extends Component{
             <div>
                 {this.item}
                 {this.precio}
-                <button>Seleccionar</button>
+                <i className="fas fa-plus-square"></i>
+                <h3>Total</h3> 
             </div>
         )
     }

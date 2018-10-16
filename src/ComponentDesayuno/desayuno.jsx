@@ -53,7 +53,7 @@ handleSalir(){
         }else{
             return(
                  <div>
-                     <Button onClick={this.handleDesayuno.bind(this)} type="submit" bsStyle="success">Desayuno  <i class="fas fa-coffee"></i></Button>                         
+                     <Button onClick={this.handleDesayuno.bind(this)} type="submit" bsStyle="success">Desayuno  <i className="fas fa-coffee"></i></Button>                         
                  </div>
                     )  
         }

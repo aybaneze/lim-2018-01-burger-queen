@@ -39,12 +39,11 @@ constructor(props){
     } else{
       return(     
       <div className="inicio">
-         
          <Grid>
           <Row className="show-grid">
            <Col xs={12} md={12} lg={12}>
            <h1>Burger Queen</h1>
-           <h3>BurgerPedido de:{this.state.name}</h3>
+           <h4>BurgerPedido de:</h4><h2>{this.state.name}</h2>
            <Button bsStyle="danger" onClick={this.handleCancel.bind(this)}>Cancelar Pedido</Button>
             </Col>
             <Col xs={12} md={6} lg={6}>
@@ -54,12 +53,7 @@ constructor(props){
              <Menu/>
             </Col>
           </Row>
-         </Grid>
-          
-         
-          
-          
-             
+         </Grid>       
       </div>
       )      
     }
