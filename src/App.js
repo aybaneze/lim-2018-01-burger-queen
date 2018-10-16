@@ -38,11 +38,26 @@ constructor(props){
     )
     } else{
       return(     
-      <div>
-         <h3>Pedido de:{this.state.name}</h3>
-          <Desayuno/>
-          <Menu/>
-          <Button bsStyle="danger" onClick={this.handleCancel.bind(this)}>Cancelar Pedido</Button>
+      <div className="inicio">
+         
+         <Grid>
+          <Row className="show-grid">
+           <Col xs={12} md={12} lg={12}>
+           <h1>Burger Queen</h1>
+           <h3>BurgerPedido de:{this.state.name}</h3>
+           <Button bsStyle="danger" onClick={this.handleCancel.bind(this)}>Cancelar Pedido</Button>
+            </Col>
+            <Col xs={12} md={6} lg={6}>
+            <Desayuno/>
+            </Col>
+            <Col xs={12} md={6} lg={6}>
+             <Menu/>
+            </Col>
+          </Row>
+         </Grid>
+          
+         
+          
           
              
       </div>

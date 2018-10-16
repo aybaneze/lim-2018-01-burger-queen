@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CartaMenu from '../componentCartaMenu/cartaMenu'
 import TotalMenu from '../list/total';
+import {Button} from 'react-bootstrap';
 
 class Menu extends Component{
     constructor(props){
@@ -62,7 +63,7 @@ class Menu extends Component{
         }else{
             return(
                 <div>
-                    <button onClick={this.handleMenu.bind(this)}>Menu</button>
+                    <Button onClick={this.handleMenu.bind(this)} type="submit" bsStyle="success">Menu  <i class="fas fa-utensils"></i></Button>
                 </div>
                   )
         }

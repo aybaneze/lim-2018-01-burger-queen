@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CartaDesayuno from '../componentCartaDesayuno/cartaDesayuno'
+import {Button} from 'react-bootstrap';
 
 class Desayuno extends Component{ 
 constructor(props){
@@ -52,8 +53,7 @@ handleSalir(){
         }else{
             return(
                  <div>
-                     <button onClick={this.handleDesayuno.bind(this)}>Desa</button>
-                     
+                     <Button onClick={this.handleDesayuno.bind(this)} type="submit" bsStyle="success">Desayuno  <i class="fas fa-coffee"></i></Button>                         
                  </div>
                     )  
         }
