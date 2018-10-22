@@ -11,16 +11,61 @@ constructor(props){
   super(props);
     this.state = {
       name: '',
-      status: true
+      status: true,
+      total: 0,
+      lista:[],
+      listDesayuno: []
     }
+    this.countTotal=this.countTotal.bind(this);
+    this.countTot=this.countTot.bind(this);
+    this.deleteDesayuno=this.deleteDesayuno.bind(this);
+    this.delete=this.delete.bind(this)
+}
+
+countTotal(precio,item){
+  const {lista} = this.state;
+  lista.push({
+    item: item,
+    precio: precio
+  })
+  this.setState({lista:lista,total: this.state.total+parseInt(precio)})
+}
+
+countTot(precio,item){
+  const {listDesayuno} = this.state;
+  listDesayuno.push({
+    item: item,
+    precio: precio
+  })
+  this.setState({listDesayuno:listDesayuno,total: this.state.total+parseInt(precio)})
+}
+
+
+
+deleteDesayuno(id,precio){
+  const {listDesayuno}=this.state;
+      if(id == id){
+        listDesayuno.splice(id, 1);
+     }
+  this.setState({listDesayuno:listDesayuno, total:this.state.total - parseInt(precio)})
+  }
+
+
+delete(id,precio){
+  const {lista}=this.state;
+      if(id == id){
+        lista.splice(id, 1);
+     }
+  this.setState({lista:lista, total:this.state.total - parseInt(precio)})
 }
 
   render(){
+    
     if(this.state.status){
-       return (
-       <div className="body">
+       return (   
+         <div className="bodyInit">  
          <Grid>
-          <Row className="show-grid">
+          <Row className="show-grid one">
            <Col xs={12} md={12} lg={12}>
            <h1>Burger Queen</h1>
            <Form onSubmit={this.handleSubmit.bind(this)}>
@@ -34,23 +79,57 @@ constructor(props){
             </Col>
           </Row>
          </Grid>
-      </div>
+         </div> 
     )
     } else{
+     
       return(     
       <div className="inicio">
          <Grid>
           <Row className="show-grid">
-           <Col xs={12} md={12} lg={12}>
+           <Col xs={12} md={6} lg={6}>
            <h1>Burger Queen</h1>
-           <h4>BurgerPedido de:</h4><h2>{this.state.name}</h2>
+           </Col>       
+           <Col xs={12} md={6} lg={6}>
            <Button bsStyle="danger" onClick={this.handleCancel.bind(this)}>Cancelar Pedido</Button>
+           </Col>
+            </Row>
+            <Row>
+            <Col xs={12} md={2} lg={2}>
+           <h4>Cliente:</h4>
+           </Col>
+           <Col xs={12} md={2} lg={2}>
+           <h5>{this.state.name}</h5>
+           </Col>
+            </Row>
+            <Row className="show-grid">
+            <Col xs={12} md={7} lg={6}>
+            <Desayuno
+            countTot={this.countTot}
+            deleteDesayuno={this.deleteDesayuno}
+            />
+              <Menu
+             countTotal={this.countTotal}
+             deleteMenu={this.deleteMenu}
+             />
             </Col>
             <Col xs={12} md={6} lg={6}>
-            <Desayuno/>
-            </Col>
-            <Col xs={12} md={6} lg={6}>
-             <Menu/>
+            {this.state.lista.map((data,key)=>{
+            return(
+              <div>
+                {data.item}{data.precio}<i className="fas fa-trash" onClick={()=>this.delete(key,data.precio)}></i>
+              </div>
+            )
+            })}
+
+             {this.state.listDesayuno.map((data,key)=>{
+            return(
+              <div>       
+                <p>{data.item}{data.precio}</p><i className="fas fa-trash" onClick={()=>this.deleteDesayuno(key,data.precio)}></i>
+              </div>
+            )
+            })}         
+            <p>Total</p>{this.state.total}
             </Col>
           </Row>
          </Grid>       

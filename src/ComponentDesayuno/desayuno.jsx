@@ -7,8 +7,11 @@ constructor(props){
     super(props);
     this.state={
         desayuno: [],
+        listDesayuno: [],
+        total: 0,
         status: false
-    }    
+    }   
+    this.countDesayuno=this.countDesayuno.bind(this)
 }
 
 componentDidMount(){
@@ -27,12 +30,28 @@ componentDidMount(){
       })
 }
 
+
+countDesayuno(id,item,precio){
+ const {listDesayuno} = this.state;
+ listDesayuno.push({
+     id: id,
+     item: item,
+     precio: precio,
+ })
+ this.setState({listDesayuno: listDesayuno, total: this.state.total + parseInt(precio)})
+ this.props.countTot(precio,item);
+}
+
 handleDesayuno(){
     this.setState({status:true})
 }
+
+
 handleSalir(){
     this.setState({status:false})
 }
+
+
 
     render(){
         if(this.state.status){
@@ -41,9 +60,11 @@ handleSalir(){
                     {this.state.desayuno.map((data,key)=>{
                         return(
                             <CartaDesayuno
+                            id={data.id}
                             key={key}
                             item= {data.item}
                             precio = {data.precio}
+                            countDesayuno = {this.countDesayuno}
                             />
                         )
                     })} 

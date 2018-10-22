@@ -12,9 +12,7 @@ class Menu extends Component{
             total:0,
             status: false
         }
-        this.total= props.total;
         this.count= this.count.bind(this)
-        this.delete=this.delete.bind(this)
     }
 
     componentDidMount(){
@@ -36,13 +34,15 @@ class Menu extends Component{
     }
 
     count(id,item,precio){
+        console.log(precio)
         const {list} = this.state;
         list.push({
                     id:id,
                     item: item,
                     precio: precio,
                 })
-               this.setState({list:list, total:parseInt(precio)})         
+               this.setState({list:list, total:this.state.total+parseInt(precio)})
+               this.props.countTotal(precio,item)         
     }
 
     handleMenu(){
@@ -53,19 +53,18 @@ class Menu extends Component{
       this.setState({status:false})
     }
     
-    delete(id,precio){
-    console.log(id)
-        const {list}=this.state;
-        console.log(list)
-            if(id == id){
-              list.splice(id, 1);
-           }
-        this.setState({list:list, total: 0})
-        }
-            
+    // delete(id,precio){
+    //     const {list}=this.state;
+    //         if(id == id){
+    //           list.splice(id, 1);
+    //        }
+    //     this.setState({list:list, total:this.state.total - parseInt(precio)})
+        
+    //     this.props.deleteMenu(precio)
+    // }
 
     render(){
-        console.log(this.state.total) 
+        console.log(this.state.total)
         if(this.state.status){
             return(
                 <div>
@@ -81,27 +80,8 @@ class Menu extends Component{
                             />
                         )
                     })}
-                     {this.state.list.map((data,key)=>{
-                         key={key}
-                        return(
-                            
-                            <div>                            
-                            <ul>
-                            <li>{data.item}
-                             {data.precio}
-                             {data.tamaño}
-                             <i className="fas fa-trash" onClick={()=>this.delete(key,data.precio)}></i> 
-                            </li>
-                            </ul>  
-                           </div>
-                        )
-                    })}
-                      
                     <Grid>
                     <Row className="show-grid">
-                    <Col xs={12} md={5} lg={6}>
-                        <h4>Total</h4> {this.state.total}  
-                        </Col>
                         <Col xs={12} md={5} lg={6}>
                         <i className="fas fa-undo-alt" onClick={this.handleSalir.bind(this)}>Salir</i>
                         </Col>

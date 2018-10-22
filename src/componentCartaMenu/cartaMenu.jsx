@@ -13,15 +13,9 @@ class CartaMenu extends Component {
         this.handleCount = this.handleCount.bind(this)
     }
 
-
-
     handleCount(id, item, precio) {
-        console.log(id, item, precio)
         this.props.count(id, item, precio)
     }
-
-
-
 
     render() {
         return (
